@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于黑白直播 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f3ee;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2c2b28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 252, 248, 0.7);
+            padding: 2.5rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-short {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #8a7f72;
+            border-left: 3px solid #b8aa99;
+            padding-left: 1.2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            color: #3b3530;
+            line-height: 1.2;
+        }
+
+        h1 small {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #8a7f72;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .intro {
+            margin: 1.8rem 0 2.2rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .intro p {
+            margin-bottom: 1.2rem;
+        }
+
+        .pull-quote {
+            margin: 2rem 0 2.2rem;
+            padding: 1.5rem 2rem;
+            background: #f0ebe3;
+            border-radius: 20px;
+            border-left: 6px solid #b29f8a;
+            font-size: 1.05rem;
+            color: #38332e;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.03);
+        }
+
+        .pull-quote p {
+            margin-bottom: 0.5rem;
+        }
+
+        .pull-quote .source {
+            display: block;
+            text-align: right;
+            font-size: 0.85rem;
+            color: #7a7168;
+            margin-top: 0.6rem;
+        }
+
+        .feature-list {
+            margin: 2.4rem 0 2rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding: 0.6rem 0 0.6rem 2rem;
+            border-bottom: 1px dashed #e1d9d0;
+            font-size: 1rem;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.5rem;
+            color: #b29f8a;
+            font-weight: bold;
+            font-size: 1.4rem;
+            line-height: 1;
+        }
+
+        .faq-note {
+            background: #f8f4ef;
+            border-radius: 18px;
+            padding: 1.4rem 1.8rem;
+            margin: 2.2rem 0 1.8rem;
+            border: 1px solid #e5ddd4;
+        }
+
+        .faq-note h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5f554b;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .faq-note p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: #4a443e;
+        }
+
+        .faq-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .closing {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dcd3ca;
+            font-size: 0.98rem;
+            color: #5d554c;
+            text-align: center;
+            line-height: 1.9;
+        }
+
+        .closing a {
+            color: #5f554b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8aa99;
+            transition: border-color 0.2s;
+        }
+
+        .closing a:hover {
+            border-bottom: 1px solid #5f554b;
+        }
+
+        @media (max-width: 580px) {
+            body {
+                padding: 1.2rem 0.8rem 3rem;
+            }
+            .wrap {
+                padding: 1.8rem 1.2rem;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .hero-short {
+                font-size: 0.8rem;
+                padding-left: 0.8rem;
+            }
+            .pull-quote {
+                padding: 1rem 1.2rem;
+            }
+            .feature-list li {
+                font-size: 0.95rem;
+                padding-left: 1.5rem;
+            }
+            .faq-note {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            .wrap {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="hero-short">
+        一个简洁、克制的信息站点 · 关于内容与初衷
+    </div>
+
+    <h1>
+        黑白直播
+        <small>站点介绍与可信说明</small>
+    </h1>
+
+    <div class="intro">
+        <p>
+            在信息纷杂的今天，人们时常需要一处安静、直白的角落，不必被浮夸的弹窗或复杂的跳转打扰。<strong>黑白直播</strong>便是这样一个地方——它不追求夺目的视觉轰炸，而是把注意力交还给内容本身。
+        </p>
+        <p>
+            站点的名称“黑白”并非意指单调，而是一种比喻：剥离过度装饰的色彩，保留阅读和观看最核心的脉络。无论你是在寻找体育赛事、纪实内容，还是只想随意浏览一些真实的画面，这里都试图用最朴素的方式呈现。
+        </p>
+    </div>
+
+    <div class="pull-quote">
+        <p>“好的观看体验，有时候不需要太多霓虹灯。清晰、稳定、可信任，比什么都重要。”</p>
+        <span class="source">—— 站点维护笔记</span>
+    </div>
+
+    <ul class="feature-list">
+        <li><strong>内容聚焦</strong> —— 围绕直播与回放，不做无关聚合，减少信息噪音。</li>
+        <li><strong>界面克制</strong> —— 浅色米白基调，图文分明，没有悬浮广告或自动播放。</li>
+        <li><strong>访问简洁</strong> —— 直达所需页面，不设置多余中间页，节省每一步点击。</li>
+        <li><strong>持续维护</strong> —— 站点保持更新与基础检查，确保链接与内容可用。</li>
+    </ul>
+
+    <div class="faq-note">
+        <h3>❔ 一些常见疑问</h3>
+        <p><strong>问：</strong> 网站是否需要注册或下载应用？<br>
+        <strong>答：</strong> 不需要。打开页面即可浏览，不要求登录或安装任何程序。</p>
+        <p><strong>问：</strong> 内容的来源可靠吗？<br>
+        <strong>答：</strong> 站点所引用的资源均来自公开且稳定的渠道，并会定期核验有效性。但任何在线服务都可能存在短暂波动，建议遇到问题时刷新或稍后再试。</p>
+        <p><strong>问：</strong> 为什么叫“黑白直播”？<br>
+        <strong>答：</strong> 黑白是一种风格选择，代表不刻意渲染、不夸大其词，回归观看本身。</p>
+    </div>
+
+    <div class="closing">
+        <p>若你有兴趣进一步了解，可直接浏览 <a href="https://site-hbzb.com">黑白直播</a>，页面中没有多余的装饰，只有你关心的内容。</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #8f857b;">—— 温和浏览，自在观看 ——</p>
+    </div>
+</div>
+</body>
+</html>
