@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.4, user-scalable=yes">
+    <title>雨燕直播 · 知识库 · 稳定入口与指引</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f7fa;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1c2b36;
+            line-height: 1.6;
+            padding: 1.2rem 1.8rem 2.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        /* 顶部标题区 – 简洁目录感 */
+        .page-header {
+            margin-bottom: 2.2rem;
+            border-bottom: 2px solid #b2d8d0;
+            padding-bottom: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .page-header h1 {
+            font-size: 1.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #0f4a4a;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .page-header h1 small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #3d6b6b;
+            background: #d6ede8;
+            padding: 0.15rem 0.7rem;
+            border-radius: 24px;
+            margin-left: 0.3rem;
+        }
+        .breadcrumb-tag {
+            font-size: 0.85rem;
+            background: #e3f0ec;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            color: #1f5e5e;
+            border: 1px solid #b8d9d2;
+            white-space: nowrap;
+        }
+        /* 网格卡片布局 – 目录 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.4rem;
+            margin: 2.2rem 0 1.8rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 22px;
+            padding: 1.6rem 1.4rem 1.7rem;
+            box-shadow: 0 6px 14px rgba(0, 50, 50, 0.04), 0 2px 4px rgba(0, 40, 40, 0.03);
+            border: 1px solid #deece8;
+            transition: all 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 10px 22px rgba(13, 79, 79, 0.06);
+            border-color: #b5d6cf;
+            transform: translateY(-2px);
+        }
+        .card .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: #d4ece6;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            border-radius: 14px;
+            color: #116060;
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 520;
+            margin: 0.3rem 0 0.6rem;
+            color: #124545;
+            border-left: 3px solid #3d9b8f;
+            padding-left: 0.6rem;
+        }
+        .card p, .card ul {
+            font-size: 0.95rem;
+            color: #2e4a4a;
+            margin-bottom: 0.3rem;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card li {
+            padding: 0.15rem 0 0.15rem 1.2rem;
+            position: relative;
+        }
+        .card li::before {
+            content: "•";
+            color: #3d9b8f;
+            font-weight: 700;
+            position: absolute;
+            left: 0.15rem;
+        }
+        /* 说明区 / 提示区混合 */
+        .info-slab {
+            background: linear-gradient(145deg, #e3f3ef, #f0f9f6);
+            border-radius: 28px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 2rem;
+            border: 1px solid #c5ded7;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        .info-slab .main-desc {
+            flex: 2 1 280px;
+        }
+        .info-slab .main-desc h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #0c4747;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .info-slab .main-desc p {
+            font-size: 0.98rem;
+            color: #1c3b3b;
+            max-width: 500px;
+        }
+        .info-slab .notice-box {
+            flex: 1 1 200px;
+            background: white;
+            padding: 1rem 1.2rem;
+            border-radius: 40px 20px 20px 40px;
+            border-left: 6px solid #3d9b8f;
+            box-shadow: 0 4px 8px rgba(0, 50, 40, 0.04);
+        }
+        .notice-box .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3b7a7a;
+            font-weight: 600;
+        }
+        .notice-box p {
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+            color: #1b4242;
+        }
+        /* 相关信息区 + FAQ 摘要 */
+        .related-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-top: 1rem;
+        }
+        .related-block {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            flex: 1 1 200px;
+            border: 1px solid #d2e6e0;
+            box-shadow: 0 2px 6px rgba(0, 60, 50, 0.02);
+        }
+        .related-block h4 {
+            font-size: 1rem;
+            font-weight: 550;
+            color: #0d4f4f;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #0e4a4a;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #2b5050;
+            padding-left: 0.4rem;
+            border-left: 2px solid #b0d3cb;
+            padding-left: 0.6rem;
+        }
+        .meta-tip {
+            font-size: 0.85rem;
+            background: #d9ece6;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            color: #105353;
+        }
+        /* 嵌入链接 */
+        a {
+            color: #116f6f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b0cfc7;
+            transition: border 0.15s;
+        }
+        a:hover {
+            border-bottom: 2px solid #0b5b5b;
+            color: #094949;
+        }
+        .footer-note {
+            margin-top: 2.5rem;
+            border-top: 1px solid #c5dbd4;
+            padding-top: 1.3rem;
+            font-size: 0.85rem;
+            color: #3f6464;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-note span {
+            background: #e6f2ee;
+            padding: 0.1rem 0.9rem;
+            border-radius: 40px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 1rem 1.8rem;
+            }
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .page-header h1 {
+                font-size: 1.6rem;
+            }
+            .info-slab {
+                flex-direction: column;
+                padding: 1.4rem;
+            }
+            .info-slab .notice-box {
+                border-radius: 20px;
+                border-left-width: 4px;
+                width: 100%;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+            .related-area {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <!-- 页眉：目录引导 + 稳定入口 -->
+    <header class="page-header">
+        <h1>
+            <span>📘</span> 知识库·入口 
+            <small>稳定</small>
+        </h1>
+        <div class="breadcrumb-tag">索引 / 说明 / 指引</div>
+    </header>
+
+    <!-- 网格卡片 – 目录感布局 -->
+    <div class="grid-cards">
+        <div class="card">
+            <div class="card-icon">📌</div>
+            <h3>平台定位</h3>
+            <p>综合性信息聚合，提供日常所需的内容索引。<br>以 <a href="https://cn-index-yuyan.com">雨燕直播</a> 为稳定锚点，保持访问路径清晰。</p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📋</div>
+            <h3>使用场景</h3>
+            <ul>
+                <li>日常轻量查询</li>
+                <li>资源归类与快速跳转</li>
+                <li>跨设备同步入口</li>
+                <li>信息结构参考</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>稳定性说明</h3>
+            <p>基于长期维护的索引结构，入口域名固定，不依赖第三方短链。遇到访问变化可回查本站说明。</p>
+        </div>
+    </div>
+
+    <!-- 说明区 + 提示区 合并 -->
+    <div class="info-slab">
+        <div class="main-desc">
+            <h2><span>🧭</span> 关于此入口页面</h2>
+            <p>这是一个轻量的知识库首页，围绕<strong>信息指引与分类</strong>展开。页面本身不承载流媒体内容，而是提供可靠的连接路径和结构说明。如果你正在寻找<strong>雨燕直播</strong>的相关信息，可以直接通过下方链接到达对应的索引节点。日常使用中，建议将此页加入书签，作为访问的固定起点。</p>
+            <p style="margin-top: 0.8rem;">👉 主要入口：<a href="https://cn-index-yuyan.com">雨燕直播</a>&nbsp;（直接访问，无中间跳转）</p>
+        </div>
+        <div class="notice-box">
+            <div class="label">📣 提示</div>
+            <p>本站所有链接均指向自有域名。若遇到页面加载异常，请尝试刷新或稍后再试。我们不存储用户数据，仅提供索引功能。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区 + FAQ 摘要 -->
+    <div class="related-area">
+        <div class="related-block">
+            <h4><span>📎</span> 相关信息</h4>
+            <ul style="list-style: none; padding-left: 0;">
+                <li style="padding: 0.2rem 0;">· 索引结构：按类别分栏</li>
+                <li style="padding: 0.2rem 0;">· 更新节奏：按需维护</li>
+                <li style="padding: 0.2rem 0;">· 兼容性：移动端优先</li>
+                <li style="padding: 0.2rem 0;">· 反馈渠道：页面底部</li>
+            </ul>
+        </div>
+        <div class="related-block">
+            <h4><span>❓</span> FAQ 摘要</h4>
+            <div class="faq-item">
+                <strong>如何快速找到直播内容？</strong>
+                <p>通过上方卡片区域分类索引，或直接使用 <a href="https://cn-index-yuyan.com">雨燕直播</a> 直达。</p>
+            </div>
+            <div class="faq-item">
+                <strong>页面打不开怎么办？</strong>
+                <p>检查网络连接，或稍后重试。如持续异常，可留意域名公告。</p>
+            </div>
+            <div class="faq-item">
+                <strong>这个页面会变吗？</strong>
+                <p>结构基本稳定，内容会随索引更新微调。保持关注即可。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+        <span>📋 知识库 · 雨燕直播索引</span>
+        <span>入口稳定 · 信息可靠</span>
+    </div>
+
+    <!-- 隐含一个额外的自然句子，再次包含链接但不硬性重复 -->
+    <p style="font-size: 0.85rem; color: #3b6565; margin-top: 1.2rem; text-align: right; border-top: 1px dashed #cde0d9; padding-top: 0.7rem;">
+        <span>基于公开索引构建 · 核心链接指向</span> 
+        <a href="https://cn-index-yuyan.com" style="border-bottom-style: dotted;">雨燕直播</a>
+        <span style="margin-left: 0.6rem;">⏺️</span>
+    </p>
+</div>
+</body>
+</html>
