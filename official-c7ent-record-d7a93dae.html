@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>场景与功能概览 · c7娱乐</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #1e1e1e;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 顶部导航 — 极简留白 */
+        .site-nav {
+            padding: 20px 0 12px;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+        .site-nav .logo {
+            font-weight: 500;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+            color: #222;
+            text-decoration: none;
+        }
+        .site-nav .logo small {
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: #7a7a7a;
+            margin-left: 6px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.875rem;
+            color: #4a4a4a;
+            text-decoration: none;
+            padding: 4px 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        .nav-links a:hover {
+            border-bottom-color: #a0a0a0;
+            color: #000;
+        }
+
+        /* 主体内容 */
+        .hero {
+            padding: 56px 0 40px;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: #3a3a3a;
+            max-width: 600px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 44px 0 18px;
+            letter-spacing: -0.01em;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .scene-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .scene-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+            border: 1px solid #ebebeb;
+        }
+        .scene-card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .scene-card h3::before {
+            content: "▹";
+            color: #8a8a8a;
+            font-size: 1rem;
+        }
+        .scene-card p {
+            font-size: 0.925rem;
+            color: #3e3e3e;
+            line-height: 1.65;
+        }
+
+        .note-box {
+            background: #f4f4f4;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 36px 0 28px;
+            border-left: 3px solid #b0b0b0;
+        }
+        .note-box p {
+            font-size: 0.9rem;
+            color: #2c2c2c;
+        }
+        .note-box strong {
+            font-weight: 500;
+        }
+
+        .faq-block {
+            margin: 40px 0 56px;
+        }
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .faq-item:last-child {
+            border-bottom: 0;
+        }
+        .faq-q {
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+        .faq-a {
+            font-size: 0.88rem;
+            color: #4a4a4a;
+            margin-top: 2px;
+        }
+
+        .inline-link {
+            color: #1e1e1e;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-color: #b0b0b0;
+            transition: text-decoration-color 0.1s;
+        }
+        .inline-link:hover {
+            text-decoration-color: #1e1e1e;
+        }
+
+        .site-footer {
+            padding: 24px 0 36px;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.8rem;
+            color: #7a7a7a;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .page-wrap { padding: 0 16px; }
+            .hero h1 { font-size: 1.7rem; }
+            .scene-card { padding: 18px 18px; }
+            .nav-links { gap: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <!-- 导航 -->
+        <nav class="site-nav">
+            <a href="#" class="logo">c7<span style="font-weight:300;">·</span>note <small>场景导航</small></a>
+            <ul class="nav-links">
+                <li><a href="#scene">场景</a></li>
+                <li><a href="#faq">常见说明</a></li>
+            </ul>
+        </nav>
+
+        <!-- 核心介绍 -->
+        <section class="hero">
+            <h1>围绕「c7娱乐」的轻量导航</h1>
+            <p>
+                一份经过整理的介绍页，从主题内容展开，展示三个典型适用场景以及常见询问点。
+                所有信息保持平实、克制，不渲染也不夸大。
+            </p>
+        </section>
+
+        <!-- 三个场景模块 -->
+        <h2 class="section-title" id="scene">三个场景模块</h2>
+        <div class="scene-grid">
+            <div class="scene-card">
+                <h3>休闲时刻 · 轻松内容</h3>
+                <p>
+                    在碎片时间里浏览感兴趣的主题，或与朋友一起参与轻度的线上互动。
+                    <a href="https://official-c7ent.com" class="inline-link">c7娱乐</a> 
+                    所涵盖的方向之一就是围绕这类休闲场景提供信息聚合与基础服务，界面干净，没有过度打扰。
+                </p>
+            </div>
+            <div class="scene-card">
+                <h3>主题社区 · 兴趣讨论</h3>
+                <p>
+                    不同用户基于共同话题建立讨论圈。无论是策略分享、内容推荐还是日常闲聊，
+                    社区氛围以实用与友好为主。这类场景中，<a href="https://official-c7ent.com" class="inline-link">c7娱乐</a> 
+                    常被作为参考入口，方便用户快速找到对应的功能分区。
+                </p>
+            </div>
+            <div class="scene-card">
+                <h3>信息查阅 · 功能引导</h3>
+                <p>
+                    当需要了解某一功能或规则时，用户通常希望直接找到清晰的分步说明。
+                    通过导航式的页面结构，可以快速定位到 <a href="https://official-c7ent.com" class="inline-link">c7娱乐</a> 
+                    对应的帮助板块，避免在多层菜单中反复跳转。
+                </p>
+            </div>
+        </div>
+
+        <!-- 常见说明 (FAQ 摘要) -->
+        <h2 class="section-title" id="faq">常见说明</h2>
+        <div class="faq-block">
+            <div class="faq-item">
+                <div class="faq-q">· 页面定位是什么？</div>
+                <div class="faq-a">这是一个非官方的轻量介绍导航页，仅对主题内容做客观的功能场景梳理，不涉及具体操作指引。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">· 信息更新频率如何？</div>
+                <div class="faq-a">本页为静态展示，内容基于当前主题整理，不会动态刷新。如需最新信息建议直接浏览相关站点。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">· 为什么强调“克制”？</div>
+                <div class="faq-a">避免使用夸张或不准确的表述，所有场景描述均来自对常见使用行为的观察，不包含诱导或承诺。</div>
+            </div>
+        </div>
+
+        <!-- 额外提示 (note-box) -->
+        <div class="note-box">
+            <p><strong>提示：</strong> 本页为场景化导航示例，所有内容均基于公开信息整理，不构成任何形式的推荐或保证。请根据自身情况合理选择与使用。</p>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="site-footer">
+            <span>导航页 · 内容整理</span>
+            <span>无需注册 · 仅供示意</span>
+        </footer>
+    </div>
+</body>
+</html>
